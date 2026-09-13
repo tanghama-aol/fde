@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Maintenance recommendation, not an execution authorization",
+  "type":"object","additionalProperties":false,
+  "required":["asset_id","decision","summary","temperature_c","procedure_id","evidence_ids","suggested_action","requires_approval","missing_information"],
+  "properties":{
+    "asset_id":{"type":"string","pattern":"^[A-Z][A-Z0-9-]{0,39}$"},
+    "decision":{"enum":["propose","needs_information","no_action"]},
+    "summary":{"type":"string","minLength":1,"maxLength":1500},
+    "temperature_c":{"type":["number","null"]},
+    "procedure_id":{"type":["string","null"]},
+    "evidence_ids":{"type":"array","uniqueItems":true,"items":{"type":"string"}},
+    "suggested_action":{"enum":["createMaintenanceDraft",null]},
+    "requires_approval":{"type":"boolean"},
+    "missing_information":{"type":"array","items":{"type":"string","minLength":1}}
+  },
+  "allOf":[
+    {"if":{"properties":{"decision":{"const":"propose"}}},"then":{"properties":{"temperature_c":{"type":"number"},"procedure_id":{"type":"string","minLength":1},"suggested_action":{"const":"createMaintenanceDraft"},"requires_approval":{"const":true},"evidence_ids":{"minItems":2},"missing_information":{"maxItems":0}}},"else":{"properties":{"suggested_action":{"const":null},"requires_approval":{"const":false}}}},
+    {"if":{"properties":{"decision":{"const":"needs_information"}}},"then":{"properties":{"missing_information":{"minItems":1}}}}
+  ]
+}

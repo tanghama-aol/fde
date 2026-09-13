@@ -1,0 +1,113 @@
+{
+  "experiment": "synthetic retrieval and deterministic guard demonstration",
+  "schema_version": "1.0",
+  "executed_at": "2026-09-13T20:39:48.912415Z",
+  "business_clock": "2026-09-01T09:02:00Z",
+  "python": "3.11.0",
+  "platform": "Windows",
+  "dependencies": {
+    "rdflib": "7.1.4",
+    "owlrl": "7.1.4",
+    "pyshacl": "0.30.1",
+    "jsonschema": "4.25.1"
+  },
+  "implementation_sha256": "313e5ee2761c826e6c4431f0a3c0af762b88c7f66bc79a6620dc2feb4d311492",
+  "retrieval_metrics": {
+    "lexical": {
+      "hits": 2,
+      "cases": 4,
+      "hit_at_1": 0.5
+    },
+    "graph": {
+      "hits": 4,
+      "cases": 4,
+      "hit_at_1": 1.0
+    }
+  },
+  "retrieval_cases": [
+    {
+      "id": "E01",
+      "expected_document": "MANUAL-N-1",
+      "lexical": {
+        "retrieved": [
+          "CATALOG-N-1"
+        ],
+        "hit_at_1": false
+      },
+      "graph": {
+        "retrieved": [
+          "MANUAL-N-1"
+        ],
+        "hit_at_1": true
+      }
+    },
+    {
+      "id": "E02",
+      "expected_document": "MANUAL-N-1",
+      "lexical": {
+        "retrieved": [
+          "CATALOG-N-1"
+        ],
+        "hit_at_1": false
+      },
+      "graph": {
+        "retrieved": [
+          "MANUAL-N-1"
+        ],
+        "hit_at_1": true
+      }
+    },
+    {
+      "id": "E03",
+      "expected_document": "MANUAL-N-1",
+      "lexical": {
+        "retrieved": [
+          "MANUAL-N-1"
+        ],
+        "hit_at_1": true
+      },
+      "graph": {
+        "retrieved": [
+          "MANUAL-N-1"
+        ],
+        "hit_at_1": true
+      }
+    },
+    {
+      "id": "E04",
+      "expected_document": "MANUAL-B-1",
+      "lexical": {
+        "retrieved": [
+          "MANUAL-B-1"
+        ],
+        "hit_at_1": true
+      },
+      "graph": {
+        "retrieved": [
+          "MANUAL-B-1"
+        ],
+        "hit_at_1": true
+      }
+    }
+  ],
+  "guard_cases": [
+    {
+      "id": "E05",
+      "observed_error": "NOT_FOUND_OR_FORBIDDEN",
+      "passed": true
+    },
+    {
+      "id": "E06",
+      "observed_decision": "needs_information",
+      "passed": true
+    }
+  ],
+  "live_llm_calls": 0,
+  "production_system_calls": 0,
+  "limits": [
+    "Four manually designed retrieval cases are a mechanism demonstration, not an independent benchmark.",
+    "The baseline uses token overlap, not vector embeddings or a tuned search engine.",
+    "Both methods receive an explicit asset identifier; no natural-language entity linker is evaluated.",
+    "No LLM factual accuracy, production latency or incident rate is measured."
+  ]
+}

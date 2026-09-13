@@ -1,0 +1,18 @@
+@prefix ex: <https://example.org/maintenance/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:AssetShape a sh:NodeShape ; sh:targetClass ex:Asset ;
+    sh:property [ sh:path ex:assetId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path ex:tenantId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path ex:region ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("NORTH" "SOUTH") ] ;
+    sh:property [ sh:path ex:version ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] ;
+    sh:property [ sh:path ex:status ; sh:minCount 1 ; sh:maxCount 1 ; sh:in (ex:Active ex:Retired) ] ;
+    sh:property [ sh:path ex:asOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] ;
+    sh:property [ sh:path ex:usesProcedure ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ex:Procedure ] .
+
+ex:TemperatureShape a sh:NodeShape ; sh:targetClass ex:TemperatureObservation ;
+    sh:property [ sh:path ex:forAsset ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ex:Asset ] ;
+    sh:property [ sh:path ex:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive -50 ; sh:maxInclusive 200 ] ;
+    sh:property [ sh:path ex:unit ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue ex:DegreeCelsius ] ;
+    sh:property [ sh:path ex:observedAt ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] .

@@ -1,0 +1,16 @@
+{
+  "chapters": 18,
+  "lessons": 10,
+  "answers": 36,
+  "references": 40,
+  "markdown_files": 38,
+  "local_links_checked": 404,
+  "unique_external_links": 41,
+  "external_link_scope": "Structural inventory only; research source access is recorded separately.",
+  "epub": {
+    "xml_documents": 37,
+    "internal_links_checked": 235
+  },
+  "issues": [],
+  "passed": true
+}

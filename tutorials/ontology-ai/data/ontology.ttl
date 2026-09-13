@@ -1,0 +1,40 @@
+@prefix ex: <https://example.org/maintenance/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Ontology a owl:Ontology ; owl:versionInfo "1.0.0" ;
+    rdfs:comment "教学领域模型；并非工业标准或预置行业模型。"@zh .
+
+ex:PhysicalObject a owl:Class .
+ex:Asset a owl:Class ; rdfs:subClassOf ex:PhysicalObject .
+ex:Pump a owl:Class ; rdfs:subClassOf ex:Asset .
+ex:CentrifugalPump a owl:Class ; rdfs:subClassOf ex:Pump .
+ex:ProductionLine a owl:Class ; rdfs:subClassOf ex:PhysicalObject .
+ex:Site a owl:Class ; rdfs:subClassOf ex:PhysicalObject .
+ex:Observation a owl:Class .
+ex:TemperatureObservation a owl:Class ; rdfs:subClassOf ex:Observation .
+ex:Procedure a owl:Class .
+ex:Status a owl:Class .
+ex:Unit a owl:Class .
+
+ex:partOf a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:domain ex:PhysicalObject ; rdfs:range ex:PhysicalObject .
+ex:hasPart a owl:ObjectProperty ; owl:inverseOf ex:partOf .
+ex:hasObservation a owl:ObjectProperty ; rdfs:domain ex:Asset ; rdfs:range ex:Observation .
+ex:forAsset a owl:ObjectProperty ; owl:inverseOf ex:hasObservation .
+ex:usesProcedure a owl:ObjectProperty ; rdfs:domain ex:Asset ; rdfs:range ex:Procedure .
+ex:status a owl:ObjectProperty ; rdfs:domain ex:Asset ; rdfs:range ex:Status .
+ex:unit a owl:ObjectProperty ; rdfs:domain ex:Observation ; rdfs:range ex:Unit .
+ex:assetId a owl:DatatypeProperty ; rdfs:domain ex:Asset ; rdfs:range xsd:string .
+ex:tenantId a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:region a owl:DatatypeProperty ; rdfs:range xsd:string .
+ex:version a owl:DatatypeProperty ; rdfs:range xsd:integer .
+ex:value a owl:DatatypeProperty ; rdfs:domain ex:Observation ; rdfs:range xsd:decimal .
+ex:observedAt a owl:DatatypeProperty ; rdfs:domain ex:Observation ; rdfs:range xsd:dateTime .
+ex:asOf a owl:DatatypeProperty ; rdfs:range xsd:dateTime .
+ex:Active a ex:Status .
+ex:Retired a ex:Status .
+ex:DegreeCelsius a ex:Unit ; rdfs:label "摄氏度"@zh .
+ex:PROC-PUMP-01 a ex:Procedure ; rdfs:label "循环泵温度异常检查程序"@zh .

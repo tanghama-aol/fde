@@ -1,0 +1,8 @@
+[
+  {"id":"E01","kind":"retrieval","principal":"north","asset_id":"P-101","query":"P-101","expected_document":"MANUAL-N-1","reason":"资产编号不在检查程序正文中，需要设备到程序的关系。"},
+  {"id":"E02","kind":"retrieval","principal":"north","asset_id":"P-102","query":"P-102","expected_document":"MANUAL-N-1","reason":"另一台设备共用同一程序。"},
+  {"id":"E03","kind":"retrieval","principal":"north","asset_id":"P-101","query":"传感器校准和冷却回路","expected_document":"MANUAL-N-1","reason":"文本本身已经包含足够线索。"},
+  {"id":"E04","kind":"retrieval","principal":"other","asset_id":"P-101","query":"乙公司内部程序","expected_document":"MANUAL-B-1","reason":"同编号对象必须保持租户边界。"},
+  {"id":"E05","kind":"authorization","principal":"north","asset_id":"P-201","query":"南厂程序","expected_error":"NOT_FOUND_OR_FORBIDDEN"},
+  {"id":"E06","kind":"freshness","principal":"north","asset_id":"P-101","query":"P-101","clock_offset_seconds":301,"expected_decision":"needs_information"}
+]

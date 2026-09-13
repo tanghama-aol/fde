@@ -1,0 +1,6 @@
+@prefix ex: <https://example.org/maintenance/> .
+@prefix d: <https://example.org/data/TENANT-A/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Ontology a owl:Ontology ; owl:versionInfo "0.9.0" .
+d:OBS-OLD ex:legacyAsset d:P-101 .

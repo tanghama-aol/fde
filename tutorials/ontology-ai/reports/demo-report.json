@@ -1,0 +1,309 @@
+{
+  "ingestion": {
+    "sources": {
+      "assets.csv": "9900ee02f39f9379a9f3a7229f6f8ca7521dff08874f35aaae58ae7da66dddb2",
+      "observations.csv": "f74ba97c2c981dc878e773fcac4d96b7c1c0644d3ac353f6ef4625b1fc76ef30"
+    },
+    "output": "dataset.trig",
+    "source_hash_meaning": "raw file identity, not RDF semantic canonicalization",
+    "normalization": "Fahrenheit to Celsius; timestamps require timezone; duplicate business keys are rejected",
+    "p102_temperature_c": 72.0
+  },
+  "reasoning": {
+    "asserted_triples": 125,
+    "closure_triples": 451,
+    "added_triples": 326,
+    "profile": "OWL RL rule materialization; not a complete OWL 2 DL reasoner",
+    "asserted_asset_type": false,
+    "inferred_asset_type": true,
+    "inferred_inverse": true,
+    "inferred_transitive_part": true
+  },
+  "validation": {
+    "valid_fixture": {
+      "conforms": true,
+      "violations": [],
+      "inference": "rdfs",
+      "shapes_version": "1.0.0"
+    },
+    "deliberately_invalid_fixture": {
+      "conforms": false,
+      "violations": [
+        {
+          "focus": "https://example.org/data/invalid/BAD-OBS",
+          "path": "https://example.org/maintenance/unit",
+          "component": "http://www.w3.org/ns/shacl#HasValueConstraintComponent",
+          "message": "Node d:BAD-OBS->ex:unit does not contain a value in the set: ['ex:DegreeCelsius']"
+        },
+        {
+          "focus": "https://example.org/data/invalid/BAD-OBS",
+          "path": "https://example.org/maintenance/value",
+          "component": "http://www.w3.org/ns/shacl#DatatypeConstraintComponent",
+          "message": "Value is not Literal with datatype xsd:decimal"
+        },
+        {
+          "focus": "https://example.org/data/invalid/BAD-OBS",
+          "path": "https://example.org/maintenance/value",
+          "component": "http://www.w3.org/ns/shacl#MaxInclusiveConstraintComponent",
+          "message": "Value is not <= Literal(\"200\", datatype=xsd:integer)"
+        },
+        {
+          "focus": "https://example.org/data/invalid/BAD-OBS",
+          "path": "https://example.org/maintenance/value",
+          "component": "http://www.w3.org/ns/shacl#MinInclusiveConstraintComponent",
+          "message": "Value is not >= Literal(\"-50\", datatype=xsd:integer)"
+        },
+        {
+          "focus": "https://example.org/data/invalid/BAD-PUMP",
+          "path": "https://example.org/maintenance/version",
+          "component": "http://www.w3.org/ns/shacl#MinCountConstraintComponent",
+          "message": "Less than 1 values on d:BAD-PUMP->ex:version"
+        }
+      ],
+      "inference": "rdfs",
+      "shapes_version": "1.0.0"
+    },
+    "expected_behavior": true
+  },
+  "retrieval": {
+    "task_scope": "maintenance_recommendation",
+    "context": {
+      "tenant": "TENANT-A",
+      "region": "NORTH",
+      "asset_id": "P-101",
+      "label": "北厂循环泵",
+      "version": 7,
+      "status": "Active",
+      "as_of": "2026-09-01T09:00:00+00:00",
+      "procedure_id": "PROC-PUMP-01",
+      "temperature_c": 92.0,
+      "observed_at": "2026-09-01T09:00:00+00:00",
+      "evidence_id": "KG:TENANT-A:P-101:v7:OBS-101",
+      "ancestry": [
+        "https://example.org/data/TENANT-A/line/LINE-N",
+        "https://example.org/data/TENANT-A/site/SITE-N"
+      ]
+    },
+    "documents": [
+      {
+        "id": "MANUAL-N-1",
+        "tenant": "TENANT-A",
+        "regions": [
+          "NORTH"
+        ],
+        "procedure_id": "PROC-PUMP-01",
+        "version": "1.0",
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "2026-10-01T00:00:00Z",
+        "title": "循环泵温度异常检查程序",
+        "text": "本教学场景把超过 80 摄氏度的读数作为需要核查的信号。先检查传感器校准和冷却回路，再由有权人员批准维修工单草稿。系统不能自行控制设备启停；工单草稿不代表故障已被诊断或修复。",
+        "score": 100.0,
+        "via_relation": true,
+        "content_hash": "75dcf17683dc9c04540a16a78b55a58d6c98d8569ec4c69eaf3391c0fb4a5d36"
+      },
+      {
+        "id": "CATALOG-N-1",
+        "tenant": "TENANT-A",
+        "regions": [
+          "NORTH"
+        ],
+        "procedure_id": null,
+        "version": "1.0",
+        "effective_from": "2026-08-01T00:00:00Z",
+        "effective_until": "2026-10-01T00:00:00Z",
+        "title": "北厂 P-101 P-102 资产目录",
+        "text": "P-101、P-102 是北厂资产标签。资产目录不包含温度异常维修步骤。实际读数、程序关联与对象版本应查询设备记录。",
+        "score": 0.156174,
+        "via_relation": false,
+        "content_hash": "6236446dc963332ae53b2919eccd3c1bcff6b6b5a2ee141301158ecc98d1cd29"
+      }
+    ],
+    "missing_information": [],
+    "retrieval_mode": "graph",
+    "ranking_note": "token overlap baseline; graph mode additionally follows usesProcedure; no embedding model"
+  },
+  "actions": {
+    "business_system": "local durable simulator; no real equipment or work-order service connected",
+    "approval_source": "trusted synthetic planner profile, not a model claim",
+    "proposal": {
+      "proposal_id": "PROP-f492311ecb854309ae73f044b886cddf",
+      "payload_hash": "ba0840cef0d39aa8b88501409cee7500ce7cbc80bc06c5d7f9bb1553d0612f2a",
+      "snapshot": {
+        "tenant": "TENANT-A",
+        "region": "NORTH",
+        "asset_id": "P-101",
+        "asset_version": 7,
+        "temperature_c": 92.0,
+        "observed_at": "2026-09-01T09:00:00+00:00",
+        "as_of": "2026-09-01T09:00:00+00:00",
+        "procedure_id": "PROC-PUMP-01",
+        "evidence_ids": [
+          "KG:TENANT-A:P-101:v7:OBS-101",
+          "MANUAL-N-1"
+        ],
+        "document_hashes": {
+          "MANUAL-N-1": "75dcf17683dc9c04540a16a78b55a58d6c98d8569ec4c69eaf3391c0fb4a5d36"
+        },
+        "action": "createMaintenanceDraft",
+        "ontology_version": "1.0.0",
+        "policy_version": "maintenance-demo-1"
+      },
+      "state": "awaiting_approval"
+    },
+    "first_attempt": {
+      "operation_id": "OP-316530ed5dc848fc972add2314446581",
+      "state": "outcome_unknown",
+      "receipt": null,
+      "error": "OUTCOME_UNKNOWN",
+      "completion_meaning": "只确认维修工单草稿，不表示正式派工、设备启停或修复"
+    },
+    "same_key_retry": {
+      "operation_id": "OP-316530ed5dc848fc972add2314446581",
+      "state": "outcome_unknown",
+      "receipt": null,
+      "error": "OUTCOME_UNKNOWN",
+      "completion_meaning": "只确认维修工单草稿，不表示正式派工、设备启停或修复"
+    },
+    "final": {
+      "operation_id": "OP-316530ed5dc848fc972add2314446581",
+      "state": "executed",
+      "receipt": {
+        "asset_id": "P-101",
+        "payload_hash": "ba0840cef0d39aa8b88501409cee7500ce7cbc80bc06c5d7f9bb1553d0612f2a",
+        "receipt_id": "WO-DRAFT-00001",
+        "request_id": "OP-316530ed5dc848fc972add2314446581",
+        "status": "DRAFT",
+        "tenant": "TENANT-A"
+      },
+      "error": null,
+      "completion_meaning": "只确认维修工单草稿，不表示正式派工、设备启停或修复"
+    },
+    "total_external_drafts": 1
+  },
+  "evaluation": {
+    "experiment": "synthetic retrieval and deterministic guard demonstration",
+    "schema_version": "1.0",
+    "executed_at": "2026-09-13T20:39:50.804317Z",
+    "business_clock": "2026-09-01T09:02:00Z",
+    "python": "3.11.0",
+    "platform": "Windows",
+    "dependencies": {
+      "rdflib": "7.1.4",
+      "owlrl": "7.1.4",
+      "pyshacl": "0.30.1",
+      "jsonschema": "4.25.1"
+    },
+    "implementation_sha256": "313e5ee2761c826e6c4431f0a3c0af762b88c7f66bc79a6620dc2feb4d311492",
+    "retrieval_metrics": {
+      "lexical": {
+        "hits": 2,
+        "cases": 4,
+        "hit_at_1": 0.5
+      },
+      "graph": {
+        "hits": 4,
+        "cases": 4,
+        "hit_at_1": 1.0
+      }
+    },
+    "retrieval_cases": [
+      {
+        "id": "E01",
+        "expected_document": "MANUAL-N-1",
+        "lexical": {
+          "retrieved": [
+            "CATALOG-N-1"
+          ],
+          "hit_at_1": false
+        },
+        "graph": {
+          "retrieved": [
+            "MANUAL-N-1"
+          ],
+          "hit_at_1": true
+        }
+      },
+      {
+        "id": "E02",
+        "expected_document": "MANUAL-N-1",
+        "lexical": {
+          "retrieved": [
+            "CATALOG-N-1"
+          ],
+          "hit_at_1": false
+        },
+        "graph": {
+          "retrieved": [
+            "MANUAL-N-1"
+          ],
+          "hit_at_1": true
+        }
+      },
+      {
+        "id": "E03",
+        "expected_document": "MANUAL-N-1",
+        "lexical": {
+          "retrieved": [
+            "MANUAL-N-1"
+          ],
+          "hit_at_1": true
+        },
+        "graph": {
+          "retrieved": [
+            "MANUAL-N-1"
+          ],
+          "hit_at_1": true
+        }
+      },
+      {
+        "id": "E04",
+        "expected_document": "MANUAL-B-1",
+        "lexical": {
+          "retrieved": [
+            "MANUAL-B-1"
+          ],
+          "hit_at_1": true
+        },
+        "graph": {
+          "retrieved": [
+            "MANUAL-B-1"
+          ],
+          "hit_at_1": true
+        }
+      }
+    ],
+    "guard_cases": [
+      {
+        "id": "E05",
+        "observed_error": "NOT_FOUND_OR_FORBIDDEN",
+        "passed": true
+      },
+      {
+        "id": "E06",
+        "observed_decision": "needs_information",
+        "passed": true
+      }
+    ],
+    "live_llm_calls": 0,
+    "production_system_calls": 0,
+    "limits": [
+      "Four manually designed retrieval cases are a mechanism demonstration, not an independent benchmark.",
+      "The baseline uses token overlap, not vector embeddings or a tuned search engine.",
+      "Both methods receive an explicit asset identifier; no natural-language entity linker is evaluated.",
+      "No LLM factual accuracy, production latency or incident rate is measured."
+    ]
+  },
+  "migration": {
+    "first_run": {
+      "moved_edges": 1,
+      "remaining_legacy_edges": 0,
+      "ontology_version": "1.0.0"
+    },
+    "repeat_run": {
+      "moved_edges": 0,
+      "remaining_legacy_edges": 0,
+      "ontology_version": "1.0.0"
+    },
+    "output": "migrated.ttl"
+  }
+}

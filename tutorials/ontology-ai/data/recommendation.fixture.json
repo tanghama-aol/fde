@@ -1,0 +1,11 @@
+{
+  "asset_id":"P-101",
+  "decision":"propose",
+  "summary":"当前温度为 92 摄氏度，高于本教学流程的 80 度核查阈值。依据已获准程序，建议先核对测量与冷却回路，并申请创建维修工单草稿。读数不能直接证明某个零件已经损坏。",
+  "temperature_c":92.0,
+  "procedure_id":"PROC-PUMP-01",
+  "evidence_ids":["KG:TENANT-A:P-101:v7:OBS-101","MANUAL-N-1"],
+  "suggested_action":"createMaintenanceDraft",
+  "requires_approval":true,
+  "missing_information":[]
+}

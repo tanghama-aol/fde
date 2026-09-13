@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "executed_at": "2026-09-13T20:39:34.430375+00:00",
+  "platform": "Windows",
+  "python": "3.11.0",
+  "dependencies": {
+    "rdflib": "7.1.4",
+    "owlrl": "7.1.4",
+    "pyshacl": "0.30.1",
+    "jsonschema": "4.25.1"
+  },
+  "implementation_sha256": "313e5ee2761c826e6c4431f0a3c0af762b88c7f66bc79a6620dc2feb4d311492",
+  "input_sha256": {
+    "data/assets.csv": "9900ee02f39f9379a9f3a7229f6f8ca7521dff08874f35aaae58ae7da66dddb2",
+    "data/documents.json": "05b2d91804ffb5efa30631d519a1432b1678ff0cb4b9eda3fe607e7ca607df6b",
+    "data/evaluation-cases.json": "f2910e8eaceab274354bcc8c2d5264f6017a595732369c249c78912fce9a2a9e",
+    "data/invalid.ttl": "2fbc7ec485da27864ccdcdf34ede71c22f80085238f3b3c8ec13e767d9a32ec8",
+    "data/migration-v1.ttl": "62dfcad88c0685ad593a010e12a9b7b68390e9afc26aa049cb843bebc101301b",
+    "data/observations.csv": "f74ba97c2c981dc878e773fcac4d96b7c1c0644d3ac353f6ef4625b1fc76ef30",
+    "data/ontology.ttl": "128715c30a4f4eaa348eb0c45175a6eeffd16f0486fc50681b5ef5de5bfba331",
+    "data/recommendation.fixture.json": "b6ea747ba8166f7d995ab3364ca7113caf2d720370c82514e631601d1b94439d",
+    "data/recommendation.schema.json": "62eaa900f1bac1992893d63d4029d40d19cc56778e341bd3e7493a7a6804a9a4",
+    "data/shapes.ttl": "38f0c815684ee763e355502e9095dda14f82109410e7e10e24bf712ff31d1690",
+    "queries/assets.rq": "25e9944e0c71efb8ba71528e7b28851017dba4238a6166cfe11a00d16d1e21b9",
+    "queries/migrate-v1-v2.ru": "3e224e98a1aacc9226b3bcbfd7c1fb6e056d95851e506748d0b8f59e1bbd59c8"
+  },
+  "unit_tests": {
+    "run": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 4.14
+  },
+  "cli_processes": 18,
+  "acceptance_checks": {
+    "environment_data_present": true,
+    "administrative_rdf_rows": true,
+    "type_inverse_transitive": true,
+    "valid_and_invalid_data": true,
+    "fahrenheit_normalization": true,
+    "lexical_catalog": true,
+    "graph_manual": true,
+    "forbidden_region": true,
+    "baseline_requires_approval": true,
+    "fixture_is_not_model_run": true,
+    "normal_temperature_no_action": true,
+    "normal_action_one_draft": true,
+    "timeout_stays_unknown_until_reconciliation": true,
+    "fresh_process_recovers": true,
+    "repeated_reconciliation_same_receipt": true,
+    "one_external_draft_after_recovery": true,
+    "evaluation_guards": true,
+    "migration_repeat_is_noop": true,
+    "complete_demo_one_draft": true
+  },
+  "cross_process_recovery": {
+    "before": "outcome_unknown",
+    "after": "executed",
+    "external_drafts": 1
+  },
+  "live_llm_calls": 0,
+  "production_system_calls": 0,
+  "model_adapter_validation": "Local loopback HTTP test double only; no live model inference."
+}

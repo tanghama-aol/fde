@@ -1,0 +1,45 @@
+test_http_failure_is_not_retried_as_action (test_model_adapter.ModelAdapterTests.test_http_failure_is_not_retried_as_action) ... ok
+test_incomplete_and_invalid_model_response (test_model_adapter.ModelAdapterTests.test_incomplete_and_invalid_model_response) ... ok
+test_protocol_and_validation_using_local_http_double (test_model_adapter.ModelAdapterTests.test_protocol_and_validation_using_local_http_double) ... ok
+test_remote_endpoint_needs_explicit_operator_selection (test_model_adapter.ModelAdapterTests.test_remote_endpoint_needs_explicit_operator_selection) ... ok
+test_changed_document_without_version_increment_is_detected (test_system.ActionTests.test_changed_document_without_version_increment_is_detected) ... ok
+test_changed_graph_version_requires_new_proposal (test_system.ActionTests.test_changed_graph_version_requires_new_proposal) ... ok
+test_changed_policy_requires_new_approval (test_system.ActionTests.test_changed_policy_requires_new_approval) ... ok
+test_concurrent_attempts_share_one_operation (test_system.ActionTests.test_concurrent_attempts_share_one_operation) ... ok
+test_confirmed_success_survives_late_unknown_update (test_system.ActionTests.test_confirmed_success_survives_late_unknown_update) ... ok
+test_connection_loss_remains_unknown (test_system.ActionTests.test_connection_loss_remains_unknown) ... ok
+test_expired_approval_blocks_first_attempt (test_system.ActionTests.test_expired_approval_blocks_first_attempt) ... ok
+test_external_conditional_write_catches_source_race (test_system.ActionTests.test_external_conditional_write_catches_source_race) ... ok
+test_mismatched_receipt_is_never_published_as_success (test_system.ActionTests.test_mismatched_receipt_is_never_published_as_success) ... ok
+test_missing_and_forged_approval_do_not_write (test_system.ActionTests.test_missing_and_forged_approval_do_not_write) ... ok
+test_missing_receipt_is_not_proof_of_nonexecution (test_system.ActionTests.test_missing_receipt_is_not_proof_of_nonexecution) ... ok
+test_new_key_cannot_duplicate_same_proposal (test_system.ActionTests.test_new_key_cannot_duplicate_same_proposal) ... ok
+test_read_only_and_other_tenant_cannot_execute (test_system.ActionTests.test_read_only_and_other_tenant_cannot_execute) ... ok
+test_restart_preserves_unknown_request_and_receipt (test_system.ActionTests.test_restart_preserves_unknown_request_and_receipt) ... ok
+test_same_key_different_proposal_conflicts (test_system.ActionTests.test_same_key_different_proposal_conflicts) ... ok
+test_success_and_repeated_key_after_expiry_return_same_receipt (test_system.ActionTests.test_success_and_repeated_key_after_expiry_return_same_receipt) ... ok
+test_timeout_retry_and_reconciliation_do_not_duplicate (test_system.ActionTests.test_timeout_retry_and_reconciliation_do_not_duplicate) ... ok
+test_ancestry_checks_region_at_each_hop (test_system.GraphTests.test_ancestry_checks_region_at_each_hop) ... ok
+test_domain_inferrs_a_type_instead_of_rejecting_subject (test_system.GraphTests.test_domain_inferrs_a_type_instead_of_rejecting_subject) ... ok
+test_duplicate_source_key_is_rejected (test_system.GraphTests.test_duplicate_source_key_is_rejected) ... ok
+test_identifier_injection_is_rejected (test_system.GraphTests.test_identifier_injection_is_rejected) ... ok
+test_migration_preserves_target_and_is_repeatable (test_system.GraphTests.test_migration_preserves_target_and_is_repeatable) ... ok
+test_missing_observation_does_not_become_zero (test_system.GraphTests.test_missing_observation_does_not_become_zero) ... ok
+test_shacl_valid_and_invalid_graphs (test_system.GraphTests.test_shacl_valid_and_invalid_graphs) ... ok
+test_tenant_identity_and_scope (test_system.GraphTests.test_tenant_identity_and_scope) ... ok
+test_type_inverse_and_transitive_inference (test_system.GraphTests.test_type_inverse_and_transitive_inference) ... ok
+test_unit_normalization_and_unknown_values (test_system.GraphTests.test_unit_normalization_and_unknown_values) ... ok
+test_evaluation_denominators_and_guard_cases (test_system.RetrievalGenerationTests.test_evaluation_denominators_and_guard_cases) ... ok
+test_false_identity_permission_and_action_fields_rejected (test_system.RetrievalGenerationTests.test_false_identity_permission_and_action_fields_rejected) ... ok
+test_fixture_and_normal_temperature (test_system.RetrievalGenerationTests.test_fixture_and_normal_temperature) ... ok
+test_malicious_document_cannot_create_an_authorization (test_system.RetrievalGenerationTests.test_malicious_document_cannot_create_an_authorization) ... ok
+test_permission_filter_precedes_context (test_system.RetrievalGenerationTests.test_permission_filter_precedes_context) ... ok
+test_relation_resolves_manual_without_asset_id_in_text (test_system.RetrievalGenerationTests.test_relation_resolves_manual_without_asset_id_in_text) ... ok
+test_revoked_document_cannot_be_used (test_system.RetrievalGenerationTests.test_revoked_document_cannot_be_used) ... ok
+test_stale_context_requests_information (test_system.RetrievalGenerationTests.test_stale_context_requests_information) ... ok
+test_wrong_fact_and_unknown_evidence_rejected (test_system.RetrievalGenerationTests.test_wrong_fact_and_unknown_evidence_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 4.139s
+
+OK

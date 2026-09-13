@@ -1,0 +1,10 @@
+PREFIX ex: <https://example.org/maintenance/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?asset ?assetId ?region ?version
+WHERE {
+  ?asset rdf:type/rdfs:subClassOf* ex:Asset ;
+         ex:assetId ?assetId ; ex:region ?region ; ex:version ?version .
+}
+ORDER BY ?assetId

@@ -1,0 +1,5 @@
+tenant_id,asset_id,label,kind,region,line_id,site_id,status,version,as_of
+TENANT-A,P-101,北厂循环泵,CentrifugalPump,NORTH,LINE-N,SITE-N,Active,7,2026-09-01T09:00:00Z
+TENANT-A,P-102,北厂备用泵,CentrifugalPump,NORTH,LINE-N,SITE-N,Active,4,2026-09-01T09:00:00Z
+TENANT-A,P-201,南厂循环泵,CentrifugalPump,SOUTH,LINE-S,SITE-S,Active,5,2026-09-01T09:00:00Z
+TENANT-B,P-101,乙公司专用泵,CentrifugalPump,NORTH,LINE-B,SITE-B,Active,2,2026-09-01T09:00:00Z

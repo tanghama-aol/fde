@@ -1,0 +1,6 @@
+[
+  {"id":"MANUAL-N-1","tenant":"TENANT-A","regions":["NORTH"],"procedure_id":"PROC-PUMP-01","version":"1.0","effective_from":"2026-08-01T00:00:00Z","effective_until":"2026-10-01T00:00:00Z","title":"循环泵温度异常检查程序","text":"本教学场景把超过 80 摄氏度的读数作为需要核查的信号。先检查传感器校准和冷却回路，再由有权人员批准维修工单草稿。系统不能自行控制设备启停；工单草稿不代表故障已被诊断或修复。"},
+  {"id":"CATALOG-N-1","tenant":"TENANT-A","regions":["NORTH"],"procedure_id":null,"version":"1.0","effective_from":"2026-08-01T00:00:00Z","effective_until":"2026-10-01T00:00:00Z","title":"北厂 P-101 P-102 资产目录","text":"P-101、P-102 是北厂资产标签。资产目录不包含温度异常维修步骤。实际读数、程序关联与对象版本应查询设备记录。"},
+  {"id":"MANUAL-S-1","tenant":"TENANT-A","regions":["SOUTH"],"procedure_id":"PROC-PUMP-01","version":"2.0","effective_from":"2026-08-01T00:00:00Z","effective_until":"2026-10-01T00:00:00Z","title":"南厂专用程序","text":"南厂内部检修流程，北厂身份无权读取此条合成记录。"},
+  {"id":"MANUAL-B-1","tenant":"TENANT-B","regions":["NORTH"],"procedure_id":"PROC-PUMP-01","version":"1.0","effective_from":"2026-08-01T00:00:00Z","effective_until":"2026-10-01T00:00:00Z","title":"乙公司内部程序","text":"TENANT-B-INTERNAL-MARKER：此合成标记用于检测跨租户泄漏。"}
+]

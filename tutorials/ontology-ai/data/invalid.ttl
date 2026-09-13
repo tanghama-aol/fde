@@ -1,0 +1,12 @@
+@prefix ex: <https://example.org/maintenance/> .
+@prefix d: <https://example.org/data/invalid/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# This deliberately invalid graph is a validation fixture, never production input.
+d:BAD-PUMP a ex:CentrifugalPump ; ex:assetId "BAD-PUMP" ;
+    ex:tenantId "TENANT-A" ; ex:region "NORTH" ; ex:status ex:Active ;
+    ex:asOf "2026-09-01T09:00:00Z"^^xsd:dateTime ; ex:usesProcedure ex:PROC-PUMP-01 .
+# Missing ex:version; non-numeric reading; non-normalized unit.
+d:BAD-OBS a ex:TemperatureObservation ; ex:forAsset d:BAD-PUMP ;
+    ex:value "hot" ; ex:unit ex:DegreeFahrenheit ;
+    ex:observedAt "2026-09-01T09:00:00Z"^^xsd:dateTime .

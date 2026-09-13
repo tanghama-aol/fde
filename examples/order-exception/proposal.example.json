@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "case_id": "CASE-001",
+  "order_id": "ORD-1042",
+  "decision": "propose",
+  "summary": "订单行尚需交付 100 件，当前可用库存 60 件，缺口为 40 件。建议向获准供应商 SUP-01 创建 40 件加急采购草稿，估算总额为 3600 元。需要有权人员批准；草稿不代表正式下单或已保证交付。",
+  "data_versions": {"order": 7, "inventory": 11, "supplier_terms": 3, "policy": "2026-09"},
+  "evidence_refs": ["ERP:ORD-1042:v7", "WMS:WH-EAST:SKU-AX:v11", "TERMS:SUP-01:SKU-AX:v3", "POLICY:EXPEDITE:2026-09"],
+  "candidate_actions": [
+    {"name": "createExpediteDraft", "line_id": "1", "supplier_id": "SUP-01", "quantity": 40, "estimated_total_minor": 360000, "currency": "CNY"}
+  ],
+  "requires_human_approval": true,
+  "missing_information": []
+}

@@ -1,0 +1,928 @@
+{
+  "schema_version": "1.0",
+  "title": "FDE 工程师指南资料目录",
+  "review_cutoff": "2026-09-13",
+  "review_timezone": "Asia/Shanghai",
+  "method": "搜索发现线索，打开官方或项目原始页面，核读与指南结论相关的正文；政策与主办方报道交叉核对。搜索摘要不作为最终证据。",
+  "source_count": 49,
+  "sources": [
+    {
+      "id": "P01",
+      "publisher": "Palantir",
+      "title": "Architecture center overview",
+      "url": "https://www.palantir.com/docs/foundry/architecture-center/overview/",
+      "claims": [
+        "Forward Deployed Engineering 与核心研发的反馈关系",
+        "Foundry、AIP、Apollo 的平台分工"
+      ],
+      "limits": "平台自身的架构说明；不是独立性能测试。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:10:42.893224+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/architecture-center/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 5885,
+      "extracted_text_sha256": "00aa714384bf842518bc944017a65fea9ff89e550aa2d2f092f54e59bb84eeba"
+    },
+    {
+      "id": "P02",
+      "publisher": "Palantir",
+      "title": "Ontology overview",
+      "url": "https://www.palantir.com/docs/foundry/ontology/overview/",
+      "claims": [
+        "Ontology 作为组织运营层",
+        "语义要素与动作、函数、安全要素相结合"
+      ],
+      "limits": "不能据此宣称任何数据库或知识图谱天然等价于 Foundry Ontology。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:30:01.491131+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/ontology/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 3172,
+      "extracted_text_sha256": "77931fd2d058080b1221b78a50835cd69d6a0803be53e113db04c57158b4b50f"
+    },
+    {
+      "id": "P03",
+      "publisher": "Palantir",
+      "title": "Ontology core concepts",
+      "url": "https://www.palantir.com/docs/foundry/ontology/core-concepts/",
+      "claims": [
+        "对象、属性、关系、动作、函数和接口的定义"
+      ],
+      "limits": "概念解释；不构成某个客户本体设计的正确性证明。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:43:05.988939+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/ontology/core-concepts",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 5040,
+      "extracted_text_sha256": "833b7ab18e1e2077ec8988b2b6ca35c4e4864294ecc86f904b1e3a8755fa0b2b"
+    },
+    {
+      "id": "P04",
+      "publisher": "Palantir",
+      "title": "Data Connection overview",
+      "url": "https://www.palantir.com/docs/foundry/data-connection/overview/",
+      "claims": [
+        "外部数据同步、连接器及接入原则",
+        "通过 Webhooks 和导出配置外部写回"
+      ],
+      "limits": "连接器存在不保证客户系统所有字段、认证和写回要求均已覆盖。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:13.974729+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/data-connection/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 4807,
+      "extracted_text_sha256": "f63b5acfc32b32f20cb5470f72720aff3dc62779018d0db7951ce15cd31ee69d"
+    },
+    {
+      "id": "P05",
+      "publisher": "Palantir",
+      "title": "Pipeline Builder overview",
+      "url": "https://www.palantir.com/docs/foundry/pipeline-builder/overview/",
+      "claims": [
+        "可视化数据转换、输出检查、版本及批流处理能力"
+      ],
+      "limits": "部分功能随部署环境变化；不应把架构说明当作具体性能承诺。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:54:29.874838+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/pipeline-builder/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 5688,
+      "extracted_text_sha256": "4713fe39753d7690b4c00cc91bcb7383afd050c42898cd20ac79ba8e2f1d3649"
+    },
+    {
+      "id": "P06",
+      "publisher": "Palantir",
+      "title": "Code Repositories overview",
+      "url": "https://www.palantir.com/docs/foundry/code-repositories/overview/",
+      "claims": [
+        "Git 协作、数据转换和 Functions 代码开发"
+      ],
+      "limits": "不同仓库、语言和版本的功能支持需要分别核验。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:13.996728+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/code-repositories/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2528,
+      "extracted_text_sha256": "2962e855f6c56a35026252ce0e2723e85b764a7eb03d5799dba871e989557720"
+    },
+    {
+      "id": "P07",
+      "publisher": "Palantir",
+      "title": "Action types overview",
+      "url": "https://www.palantir.com/docs/foundry/action-types/overview/",
+      "claims": [
+        "动作修改本体对象、属性和关系，可有副作用",
+        "动作体现完整业务操作"
+      ],
+      "limits": "本体内事务不能外推为所有外部系统的分布式原子事务。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:43:05.991438+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/action-types/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2859,
+      "extracted_text_sha256": "82474fd4611c385202118089de5da8469694a3e325c361624b0ecf574f325059"
+    },
+    {
+      "id": "P08",
+      "publisher": "Palantir",
+      "title": "Functions overview",
+      "url": "https://www.palantir.com/docs/foundry/functions/overview/",
+      "claims": [
+        "服务端业务逻辑、对象查询及编辑",
+        "TypeScript 与 Python Functions"
+      ],
+      "limits": "不同语言的特性和权限仍需查阅具体版本说明。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:25:08.291241+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/functions/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2477,
+      "extracted_text_sha256": "2dbd148af52bfa54ef21d54c639724ca8ced91bdaf60d5d0ae01358e04681b05"
+    },
+    {
+      "id": "P09",
+      "publisher": "Palantir",
+      "title": "Workshop overview",
+      "url": "https://www.palantir.com/docs/foundry/workshop/overview/",
+      "claims": [
+        "基于对象层构建业务应用",
+        "Actions 写回、Functions 逻辑和交互任务界面"
+      ],
+      "limits": "界面可构建不等于用户已采用或流程已改善。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:54:30.822351+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/workshop/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 3136,
+      "extracted_text_sha256": "29b4e5b011bc9a03fe927f512e8e7d346e04aa41f182af218e3a0d1be1a2c848"
+    },
+    {
+      "id": "P10",
+      "publisher": "Palantir",
+      "title": "Ontology SDK overview",
+      "url": "https://www.palantir.com/docs/foundry/ontology-sdk/overview/",
+      "claims": [
+        "从自定义应用访问类型化本体能力",
+        "令牌范围与用户权限共同约束读取"
+      ],
+      "limits": "读取过滤不会自动约束应用收到数据后的全部行为，需结合 P23。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:54:30.385339+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/ontology-sdk/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 5177,
+      "extracted_text_sha256": "7923e98903bc0ea4e5ea651797d61fdc1f698dc12bfc8c23b6b63399c3d491d5"
+    },
+    {
+      "id": "P11",
+      "publisher": "Palantir",
+      "title": "AIP overview",
+      "url": "https://www.palantir.com/docs/foundry/aip/overview/",
+      "claims": [
+        "AI 与企业数据、运营流程及治理的集成",
+        "AIP 工具组合"
+      ],
+      "limits": "官方明确功能可得性可能因客户环境不同而变化。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:54:29.874339+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/aip/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 4512,
+      "extracted_text_sha256": "70741261bb749b63be8b69ec2890517ce07c6d2cf3da527ec537b7f4a2d68d00"
+    },
+    {
+      "id": "P12",
+      "publisher": "Palantir",
+      "title": "AIP Logic overview",
+      "url": "https://www.palantir.com/docs/foundry/logic/overview/",
+      "claims": [
+        "构建、测试和发布利用本体的 LLM 函数",
+        "本体编辑可自动应用或暂存供人审查"
+      ],
+      "limits": "自动应用需要实际授权；输出和下游传播仍须治理。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:13.874729+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/logic/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 3188,
+      "extracted_text_sha256": "baab9905e5a85af5491c63ff3afcadff27041b43693a03ec825567c25b3330d0"
+    },
+    {
+      "id": "P13",
+      "publisher": "Palantir",
+      "title": "AIP Evals overview",
+      "url": "https://www.palantir.com/docs/foundry/aip-evals/overview/",
+      "claims": [
+        "测试用例、评估函数、版本比较、模型比较及重复运行方差"
+      ],
+      "limits": "不等同于 OpenAI 的同名 Evals 平台产品；评估质量仍取决于样本及评分。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:13.903228+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/aip-evals/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2459,
+      "extracted_text_sha256": "c9bbf9426e29331f69124d73df10fcc029456369a95e7f856ebfce0e3475f1ae"
+    },
+    {
+      "id": "P14",
+      "publisher": "Palantir",
+      "title": "AIP Chatbot Studio overview",
+      "url": "https://www.palantir.com/docs/foundry/chatbot-studio/overview/",
+      "claims": [
+        "结合本体、文档和工具构建交互助手",
+        "当前文档说明其旧称为 AIP Agent Studio"
+      ],
+      "limits": "新旧名称可见于不同版本资料，不应当作完全不同的产品重复计算。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:10:43.143228+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/chatbot-studio/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 1926,
+      "extracted_text_sha256": "9b75fdba9e94080a80bf3a27ca3f5103b7cac0ac2e8af51550a8022e5ea49944"
+    },
+    {
+      "id": "P15",
+      "publisher": "Palantir",
+      "title": "Automate overview",
+      "url": "https://www.palantir.com/docs/foundry/automate/overview/",
+      "claims": [
+        "按时间和对象条件触发动作、函数及通知"
+      ],
+      "limits": "触发自动化仍需考虑执行身份、幂等、外部副作用和回执。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:13.906227+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/automate/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 3528,
+      "extracted_text_sha256": "9ed530cdb19a0d4ed0d8eb1109049a3cef489164e01ad9d10b891ab2d2186343"
+    },
+    {
+      "id": "P16",
+      "publisher": "Palantir",
+      "title": "Security and governance overview",
+      "url": "https://www.palantir.com/docs/foundry/security/overview/",
+      "claims": [
+        "身份与授权、强制和自主访问控制、治理框架"
+      ],
+      "limits": "平台安全功能不能替代客户实际配置、数据分级与应用审查。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:05:36.318227+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/security/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 7112,
+      "extracted_text_sha256": "6e1214fd498118b133cc51dde15e5380a703dc3c30ccee2c962774189c6cbaaa"
+    },
+    {
+      "id": "P17",
+      "publisher": "Palantir",
+      "title": "Marketplace overview",
+      "url": "https://www.palantir.com/docs/foundry/marketplace/overview/",
+      "claims": [
+        "发布产品的发现、安装和版本更新机制"
+      ],
+      "limits": "打包可复用不等于无需客户配置、验证或迁移。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:10:42.893224+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/marketplace/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 1080,
+      "extracted_text_sha256": "071acae0279dfcbb41be8f310cec8e6fa64c53eef970ff68fc6a52face9843f3"
+    },
+    {
+      "id": "P18",
+      "publisher": "Palantir",
+      "title": "Delivering a use case",
+      "url": "https://www.palantir.com/docs/foundry/getting-started/delivering-a-use-case/",
+      "claims": [
+        "以结果、数据和工具组织用例交付",
+        "记录决策并评估其后续影响"
+      ],
+      "limits": "指南中的 8 周安排由本文提出，并非该文档承诺。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:10:00.569733+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/getting-started/delivering-a-use-case",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 7125,
+      "extracted_text_sha256": "d7f5740c71b68a610bb3193dbc4d5048468dc85795f68f6a8639c697c56eb2f4"
+    },
+    {
+      "id": "P19",
+      "publisher": "Palantir",
+      "title": "Ontology design: Best practices",
+      "url": "https://www.palantir.com/docs/foundry/ontology/ontology-best-practices/",
+      "claims": [
+        "领域驱动、减少重复、扩展与组合的设计原则",
+        "按真实业务建模并通过任务验证"
+      ],
+      "limits": "原则需结合组织实际；不存在统一最优对象数量。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:25:08.289743+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/ontology/ontology-best-practices",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 18320,
+      "extracted_text_sha256": "6bcb293932ac59a3953b4543aa7f6131606443aecaae57da22465074d3e3efeb"
+    },
+    {
+      "id": "P20",
+      "publisher": "Palantir",
+      "title": "Ontology design: Anti-patterns",
+      "url": "https://www.palantir.com/docs/foundry/ontology/ontology-anti-patterns/",
+      "claims": [
+        "源系统孤岛、字段堆砌、万能对象和动作膨胀等反模式"
+      ],
+      "limits": "用于设计审查，不应机械照搬示例数据模型。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:25:08.290241+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/ontology/ontology-anti-patterns",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 30157,
+      "extracted_text_sha256": "c2f289202e4af4e44b45af4cff747e66ef4b97becdaf2b7445db9eb974d0020d"
+    },
+    {
+      "id": "P21",
+      "publisher": "Palantir",
+      "title": "Getting started with Palantir",
+      "url": "https://www.palantir.com/docs/foundry/getting-started/overview/",
+      "claims": [
+        "学习、用例和试用申请入口"
+      ],
+      "limits": "未核实个人账号资格、所在地区可得性、收费或审批结果。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T11:43:05.987937+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/getting-started/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 4034,
+      "extracted_text_sha256": "119a0284c848aad491538b54b778d2efb959d0358ad5eaf1cb3a204f987d04e2"
+    },
+    {
+      "id": "P22",
+      "publisher": "Palantir",
+      "title": "Ontology scenarios overview",
+      "url": "https://www.palantir.com/docs/foundry/ontology/overview-ontology-scenario/",
+      "claims": [
+        "what-if 分析和隔离动作模拟",
+        "当前为 Beta，且不用于历史数据快照"
+      ],
+      "limits": "具体可用性及行为随环境和版本变化；不能替代评估输入快照。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:25:08.292240+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/ontology/overview-ontology-scenario",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 4173,
+      "extracted_text_sha256": "45efbc880018a21acc040666a14c5025cad52116d1825211b4d5497e71f153ef"
+    },
+    {
+      "id": "P23",
+      "publisher": "Palantir",
+      "title": "Access control propagation",
+      "url": "https://www.palantir.com/docs/foundry/security/access-control-propagation/",
+      "claims": [
+        "强制控制与行列读取过滤的传播差异",
+        "函数、模型、OSDK、写回及导出中的控制边界"
+      ],
+      "limits": "平台内强制控制的传播说明不等于导出的外部文件仍受同一平台强制控制。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:35:37.390736+00:00",
+      "resolved_url": "https://www.palantir.com/docs/foundry/security/access-control-propagation",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 8359,
+      "extracted_text_sha256": "ceb95d7bcd64ee16f94ccdc8812adb3b60af6f66fafbdebc688d469b792cf510"
+    },
+    {
+      "id": "O01",
+      "publisher": "OpenAI",
+      "title": "OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence",
+      "url": "https://openai.com/index/openai-launches-the-deployment-company/",
+      "published_at": "2026-05-11",
+      "source_type": "company_announcement",
+      "claims": [
+        "DeployCo 的控制权、超过 40 亿美元初始投资及合作生态",
+        "价值诊断、少数优先工作流、嵌入客户组织并交付生产系统",
+        "同意收购 Tomoro，拟带来约 150 名 FDE 和部署专家"
+      ],
+      "limits": "公告仍包含交割条件；未据此确认收购最终完成、标准报价、统一周期或已完成客户数。",
+      "accessed_at": "2026-09-13T11:46:30.728408+00:00",
+      "resolved_url": "https://openai.com/index/openai-launches-the-deployment-company/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 7477,
+      "extracted_text_sha256": "dbbd3a8a1e7bba1a8bda62ab58074f884cb2cffb6863a208dff4144501fd21d1"
+    },
+    {
+      "id": "O02",
+      "publisher": "OpenAI",
+      "title": "Introducing Frontier Alliances",
+      "url": "https://openai.com/index/frontier-alliance-partners",
+      "published_at": "2026-02-23",
+      "source_type": "company_announcement",
+      "claims": [
+        "Frontier 的技术基础角色",
+        "BCG、McKinsey、Accenture、Capgemini 与内部 FDE 的协作分工"
+      ],
+      "limits": "发布时的可得性说明不是 2026-09 的账号授权承诺；未据此声称所有 DeployCo 项目强制采用 Frontier。",
+      "accessed_at": "2026-09-13T11:43:05.985939+00:00",
+      "resolved_url": "https://openai.com/index/frontier-alliance-partners/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 6779,
+      "extracted_text_sha256": "0baa034871031ec4e41ba853bd8313a5dfaeed3453c590b6fd643260a89da833"
+    },
+    {
+      "id": "O03",
+      "publisher": "OpenAI",
+      "title": "New tools for building agents",
+      "url": "https://openai.com/index/new-tools-for-building-agents/",
+      "published_at": "2025-03-11",
+      "source_type": "product_announcement",
+      "claims": [
+        "Responses API、Agents SDK、内置工具与工作流可观测能力的发布及定位"
+      ],
+      "limits": "历史发布说明，未用其中早期模型、价格、工具参数或 Assistants 退役预告代表当前 API 规范。",
+      "accessed_at": "2026-09-13T12:05:36.322728+00:00",
+      "resolved_url": "https://openai.com/index/new-tools-for-building-agents/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 18711,
+      "extracted_text_sha256": "f211f0b447c9c35da6ceb2205213a34e516a5b8f4d6fc5efdb5ad208ded02a3b"
+    },
+    {
+      "id": "O04",
+      "publisher": "OpenAI",
+      "title": "Introducing AgentKit — updated June 3, 2026",
+      "url": "https://openai.com/index/introducing-agentkit/",
+      "published_at": "2025-10-06",
+      "updated_at": "2026-06-03",
+      "source_type": "product_announcement_with_update",
+      "claims": [
+        "更新说明 Agent Builder 与 Evals 平台产品将于 2026-11-30 停止提供",
+        "对需要以代码继续的工作流建议使用 Agents SDK"
+      ],
+      "limits": "优先采用页首更新，不沿用正文旧的可得性描述；不能外推为所有评估能力、所有同名 API 或 Agents SDK 一并停用。",
+      "accessed_at": "2026-09-13T12:05:36.323727+00:00",
+      "resolved_url": "https://openai.com/index/introducing-agentkit/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 7016,
+      "extracted_text_sha256": "3c4bda7d16f84f0e66af59ff4aa6114061edbbc456edfd7b5551e04b989d13d8"
+    },
+    {
+      "id": "S01",
+      "publisher": "上海创智学院",
+      "title": "打通AI落地“最后一公里”！上海首期FDE专题培训创智开讲",
+      "url": "https://www.sii.edu.cn/2025/1208/c22a620/page.htm",
+      "published_at": "2025-12-09",
+      "source_type": "institution_report",
+      "claims": [
+        "正文记载 11 月 29 日正式开班、12 月 6 日专题课",
+        "百家企业、千个智能体、万名开发者转型及超千人储备库目标",
+        "培训强调业务现场、需求拆解、流程优化和实时迭代"
+      ],
+      "limits": "目标不是完成统计；页面路径中的日期不能替代正文显示的发布日期。",
+      "accessed_at": "2026-09-13T12:10:42.877731+00:00",
+      "resolved_url": "https://www.sii.edu.cn/2025/1208/c22a620/page.htm",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2003,
+      "extracted_text_sha256": "ef486e05112d095c2b480b86055f16b7cc731dbd2066c6325a2eed892f468a0f"
+    },
+    {
+      "id": "S02",
+      "publisher": "上海规划资源（转载上海创智学院供稿）",
+      "title": "上海首期FDE专题培训圆满收官",
+      "url": "https://mp.weixin.qq.com/s?src=11&timestamp=1789299991&ver=6964&signature=MDpYrZqeOXPYyIgYylS6ZV8qdAIGBaT68*38LFEf-lm3q2TV8WItr59ody1fyzzqsUR0rWLrSzEXNXn63mnMKd3rEsaf-SCpffua-*9J-tOXyqmgHFMZPX6UyTFAzQBE&new=1",
+      "event_date": "2025-12-20",
+      "source_type": "official_wechat_repost",
+      "claims": [
+        "首期培训收官和联合组织单位",
+        "三类人群、三个阶段、三类能力的 3+3+3 矩阵",
+        "2026 年分行业招募方向、基础条件与报名入口"
+      ],
+      "limits": "已从页面静态文章载荷核读正文；公众号签名链接可能失效。关键数量与 S01 交叉核对，未核实当前批次名额及完成统计。",
+      "published_at": null,
+      "accessed_at": "2026-09-13T12:25:08.301743+00:00",
+      "resolved_url": "https://mp.weixin.qq.com/s?src=11&timestamp=1789299991&ver=6964&signature=MDpYrZqeOXPYyIgYylS6ZV8qdAIGBaT68*38LFEf-lm3q2TV8WItr59ody1fyzzqsUR0rWLrSzEXNXn63mnMKd3rEsaf-SCpffua-*9J-tOXyqmgHFMZPX6UyTFAzQBE&new=1",
+      "verification": "static_article_payload_read",
+      "http_status": 200,
+      "extracted_text_characters": 1437,
+      "extracted_text_sha256": "03e6fd8c5f404b5252d17cac81af8bee221b45ab3d5c298aae7205f83b23b570"
+    },
+    {
+      "id": "S03",
+      "publisher": "上海市人民政府办公厅",
+      "title": "上海市支持先进制造业转型升级三年行动方案（2026—2028年）",
+      "url": "https://www.shanghai.gov.cn/nw12344/20260109/3c4f820bca7b46cd878efcb121337bdd.html",
+      "published_at": "2026-01-09",
+      "document_number": "沪府办规〔2025〕20号",
+      "source_type": "government_policy",
+      "claims": [
+        "第七项深化数智转型：AI+制造、培育 FDE 队伍、行业模型和工业智能体",
+        "方案自 2026-01-01 实施，有效期至 2028-12-31"
+      ],
+      "limits": "没有把方案其他补贴条款解读为 FDE 培训统一补贴或个人资质。",
+      "accessed_at": "2026-09-13T12:10:00.557225+00:00",
+      "resolved_url": "https://www.shanghai.gov.cn/nw12344/20260109/3c4f820bca7b46cd878efcb121337bdd.html",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 3657,
+      "extracted_text_sha256": "86e4ad969658b4d0cd9f5a30a140bf565c4828e6a5db4c97998d0937152ac6ea"
+    },
+    {
+      "id": "S04",
+      "publisher": "徐汇区人民政府 / 上海市政府网站",
+      "title": "打造AI落地“特种兵”，徐汇首期FDE专题培训创智开讲",
+      "url": "https://www.shanghai.gov.cn/nw15343/20260213/57783c983a3b4e0194dd6e350a38bdb1.html",
+      "published_at": "2026-02-13",
+      "event_date": "2026-02-12",
+      "source_type": "government_news",
+      "claims": [
+        "政企融合编班、大班授课、小班研讨和项目实训",
+        "区级培训与真实产业场景对接"
+      ],
+      "limits": "区级项目目标与全市百千万目标分别记录；未把开班参加人数当作合格 FDE 人数。",
+      "accessed_at": "2026-09-13T12:10:00.557728+00:00",
+      "resolved_url": "https://www.shanghai.gov.cn/nw15343/20260213/57783c983a3b4e0194dd6e350a38bdb1.html",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 1409,
+      "extracted_text_sha256": "0e76f380fb9170b48bdea2606bc4ed5b2b41d174cf4fd8172baf1da5f26cf4c3"
+    },
+    {
+      "id": "S05",
+      "publisher": "上海市人民政府办公厅",
+      "title": "上海市战略性新兴产业发展“十五五”规划",
+      "url": "https://www.shanghai.gov.cn/nw12344/20260826/0f32f0c1379a4e949a1ca414b0be25b5.html",
+      "published_at": "2026-08-26",
+      "document_number": "沪府办发〔2026〕19号",
+      "source_type": "government_policy",
+      "claims": [
+        "人工智能章节提出培养 FDE 团队",
+        "政策支持校企协同育人、驻企实训等模式"
+      ],
+      "limits": "宏观产业规划，不是课程报名简章，也不证明具体培养数量已完成。",
+      "accessed_at": "2026-09-13T12:10:00.567730+00:00",
+      "resolved_url": "https://www.shanghai.gov.cn/nw12344/20260826/0f32f0c1379a4e949a1ca414b0be25b5.html",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 9406,
+      "extracted_text_sha256": "8fdd4217ec41661b6b74b8b1c02775bbe982f8388912d72a62c6771a81053813"
+    },
+    {
+      "id": "S06",
+      "publisher": "虹口区人民政府 / 上海市政府网站",
+      "title": "FDE企业AI落地班上海专场在虹口举办！规上企业参与AI场景共创",
+      "url": "https://www.shanghai.gov.cn/nw15343/20260827/7e015e8fb2dd407f887bc72a844bb2d0.html",
+      "published_at": "2026-08-27",
+      "event_date": "2026-08-26",
+      "source_type": "government_news",
+      "claims": [
+        "企业问题诊断、专家匹配、现场方案共创的活动方式",
+        "虹口与 Datawhale 的企业场景对接"
+      ],
+      "limits": "未将文中引述的岗位需求增幅用作本指南的就业结论；行业认证不能直接等同国家职业资格。",
+      "accessed_at": "2026-09-13T12:25:08.293743+00:00",
+      "resolved_url": "https://www.shanghai.gov.cn/nw15343/20260827/7e015e8fb2dd407f887bc72a844bb2d0.html",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 1485,
+      "extracted_text_sha256": "0259f362d64eb3a4bc8c6632ba70ce7852e6231b2f1911eb3bd0d59d508b5b9e"
+    },
+    {
+      "id": "S07",
+      "publisher": "GDPS 报名平台（S02 指向的入口）",
+      "title": "FDE专项培训报名表",
+      "url": "https://form.gdps.org.cn/fde",
+      "source_type": "registration_form",
+      "claims": [
+        "核验日表单可访问，列有企业、个人、技能和项目经历字段"
+      ],
+      "limits": "仅核对页面可访问性和字段，未提交申请；不证明当期名额、费用、课程安排或录取资格。",
+      "published_at": null,
+      "accessed_at": "2026-09-13T12:35:37.389738+00:00",
+      "resolved_url": "https://form.gdps.org.cn/fde",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 880,
+      "extracted_text_sha256": "78b9b374bd691a781e37ec2ab107698eb65454a3d9da5afdbd9eb31669b731e8"
+    },
+    {
+      "id": "T01",
+      "publisher": "Model Context Protocol",
+      "title": "Architecture overview",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+      "claims": [
+        "MCP 的客户端、服务端、工具、资源和提示等概念",
+        "协议负责上下文交换，不决定应用如何使用模型"
+      ],
+      "limits": "未将某个协议版本的全部握手和认证细节固化进教程；实际集成应锁定双方版本。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:05:36.324726+00:00",
+      "resolved_url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 26628,
+      "extracted_text_sha256": "106122d3699a030b05b65997cdcc04bf58399f5aa5100d9b94eba074416080f8"
+    },
+    {
+      "id": "T02",
+      "publisher": "LangChain",
+      "title": "LangGraph overview",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "claims": [
+        "有状态智能体、确定性和模型步骤组合、持久化与人工介入"
+      ],
+      "limits": "框架能力需要正确配置持久化和恢复；不意味着外部业务副作用天然幂等。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:14.006730+00:00",
+      "resolved_url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 5713,
+      "extracted_text_sha256": "bc1783778b64f66a9110e22236f71d3e380f2f5d65ed9aec70b9a981adaccf02"
+    },
+    {
+      "id": "T03",
+      "publisher": "Temporal",
+      "title": "Temporal Workflow Execution overview",
+      "url": "https://docs.temporal.io/workflow-execution",
+      "claims": [
+        "持久执行、事件历史、重放及与 Activity 的分工"
+      ],
+      "limits": "工作流可恢复不能单独保证外部系统业务效果恰好执行一次。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:05:36.585728+00:00",
+      "resolved_url": "https://docs.temporal.io/workflow-execution",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 9919,
+      "extracted_text_sha256": "1857f795e23c2dbfcb00086a31e3efaacc073f95ad1f308caced784c00240116"
+    },
+    {
+      "id": "T04",
+      "publisher": "pgvector 项目",
+      "title": "pgvector README",
+      "url": "https://github.com/pgvector/pgvector",
+      "claims": [
+        "精确和近似向量检索",
+        "HNSW、IVFFlat 与过滤条件的取舍"
+      ],
+      "limits": "召回与性能取决于数据、索引参数、过滤和负载；未做具体环境基准测试。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:15.253733+00:00",
+      "resolved_url": "https://github.com/pgvector/pgvector",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 33273,
+      "extracted_text_sha256": "3f07ae4061b2cbf33de4f79d3ddf07bb5c68a5af15d0e8457bdbd14253cb2416"
+    },
+    {
+      "id": "T05",
+      "publisher": "PostgreSQL",
+      "title": "Row Security Policies",
+      "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "claims": [
+        "行级策略及默认拒绝行为",
+        "超级用户、BYPASSRLS 和表所有者等例外"
+      ],
+      "limits": "应按部署版本核验；仅有策略定义不能证明服务实际使用了受限身份。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:15.893729+00:00",
+      "resolved_url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 16528,
+      "extracted_text_sha256": "0543a578159898e6cef5d22a3f96833fc87e0345e84e82f5727650a0041c62ed"
+    },
+    {
+      "id": "T06",
+      "publisher": "dbt Labs",
+      "title": "Add data tests to your DAG",
+      "url": "https://docs.getdbt.com/docs/build/data-tests",
+      "claims": [
+        "非空、唯一性、关系、允许值和自定义数据测试"
+      ],
+      "limits": "数据测试应反映业务断言；通过测试不等于全部数据正确。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:16.019729+00:00",
+      "resolved_url": "https://docs.getdbt.com/docs/build/data-tests",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 19378,
+      "extracted_text_sha256": "cc9126f7113f0ce589d43ca423392f78d6a0d6457ecc997f33c5fc70b31b34a0"
+    },
+    {
+      "id": "T07",
+      "publisher": "OpenTelemetry",
+      "title": "Signals",
+      "url": "https://opentelemetry.io/docs/concepts/signals/",
+      "claims": [
+        "Traces、metrics、logs 等观测信号的职责"
+      ],
+      "limits": "收集日志要服从数据保护和保留要求；可观测性不能替代业务评估。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:05:37.235228+00:00",
+      "resolved_url": "https://opentelemetry.io/docs/concepts/signals/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 1248,
+      "extracted_text_sha256": "b87b2a3eaad703bd9c3e176e437f14ace13e5c33b4384a5f3f75b4796d904fb2"
+    },
+    {
+      "id": "T08",
+      "publisher": "Dify",
+      "title": "Dify Documentation",
+      "url": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
+      "claims": [
+        "AI 应用、工作流、数据接入和 API 发布定位",
+        "云端及社区自托管路径"
+      ],
+      "limits": "未核验所有版本、企业功能或许可场景；采购及商用需另查适用条款。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:09:16.307235+00:00",
+      "resolved_url": "https://docs.dify.ai/en/home",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 1506,
+      "extracted_text_sha256": "114906b965e1b511a33d39871a607970117ec69ed13df0f094df4abae6414407"
+    },
+    {
+      "id": "T09",
+      "publisher": "Airbyte",
+      "title": "Airbyte Protocol",
+      "url": "https://docs.airbyte.com/platform/understanding-airbyte/airbyte-protocol",
+      "claims": [
+        "Source、Destination、Stream、Catalog 及数据接入协议概念"
+      ],
+      "limits": "未为具体客户验证连接器的字段覆盖、删除语义和增量一致性。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:44.701996+00:00",
+      "resolved_url": "https://docs.airbyte.com/platform/understanding-airbyte/airbyte-protocol",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 57011,
+      "extracted_text_sha256": "8b5d914ecd5e24d41dfe00862aeb0a98e33c16c1a8f1296b97bb319c59db8d19"
+    },
+    {
+      "id": "T10",
+      "publisher": "Debezium",
+      "title": "Debezium Architecture",
+      "url": "https://debezium.io/documentation/reference/stable/architecture.html",
+      "claims": [
+        "数据库变更捕获及 Kafka Connect、Server、Engine 部署方式"
+      ],
+      "limits": "不必强制使用 Kafka；选择方式取决于客户现有基础设施。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:44.701996+00:00",
+      "resolved_url": "https://debezium.io/documentation/reference/stable/architecture.html",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2995,
+      "extracted_text_sha256": "eaf5001f85a022a523cfe14eb1cf49e4bd9ba77d001a020d2f1f237c1551ca9b"
+    },
+    {
+      "id": "T11",
+      "publisher": "n8n",
+      "title": "n8n Docs",
+      "url": "https://docs.n8n.io/",
+      "claims": [
+        "结合 AI 和业务流程的工作流自动化定位"
+      ],
+      "limits": "官方自述采用 fair-code 许可，不能笼统写成无限制开源商用。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:44.702993+00:00",
+      "resolved_url": "https://docs.n8n.io/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 964,
+      "extracted_text_sha256": "96a23ae586c133dd621059f5cc2211d9716072b09443313c5a63601b331d056b"
+    },
+    {
+      "id": "T12",
+      "publisher": "vLLM",
+      "title": "vLLM documentation",
+      "url": "https://docs.vllm.ai/en/latest/",
+      "claims": [
+        "大模型推理与服务框架，批处理、缓存和多种模型适配"
+      ],
+      "limits": "硬件与模型组合的可用性、显存、延迟、许可及成本均需具体评估。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:44.703992+00:00",
+      "resolved_url": "https://docs.vllm.ai/en/latest/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 2995,
+      "extracted_text_sha256": "c8babca68f27f0246c4d0b5857f2e36ec76677cc1af9b57ae27fabd6693872ad"
+    },
+    {
+      "id": "T13",
+      "publisher": "Langfuse",
+      "title": "Langfuse Overview",
+      "url": "https://langfuse.com/docs",
+      "claims": [
+        "LLM 轨迹、提示版本、评估、成本和延迟观测"
+      ],
+      "limits": "自托管与商业服务功能边界、数据保留和成本需按实际版本核验。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:44.704997+00:00",
+      "resolved_url": "https://langfuse.com/docs",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 7382,
+      "extracted_text_sha256": "6d6931ed42d95fa8498cfdbc38d72ce8be70e9a9bff7e1ef21b10cac439e2e9a"
+    },
+    {
+      "id": "T14",
+      "publisher": "Open Policy Agent",
+      "title": "Open Policy Agent documentation",
+      "url": "https://www.openpolicyagent.org/docs",
+      "claims": [
+        "用策略代码进行决策，将策略决策与执行点分离"
+      ],
+      "limits": "OPA 的输入必须可信，调用方必须真正执行决策结果。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:46.054725+00:00",
+      "resolved_url": "https://www.openpolicyagent.org/docs",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 30021,
+      "extracted_text_sha256": "05a57edbcbf43221f8e85cd4b91ec8b86c616e197afda236d16bbb61a9522cdc"
+    },
+    {
+      "id": "T15",
+      "publisher": "FastAPI",
+      "title": "FastAPI documentation",
+      "url": "https://fastapi.tiangolo.com/",
+      "claims": [
+        "基于 Python 类型提示构建 API，支持 OpenAPI 和 JSON Schema"
+      ],
+      "limits": "未采用页面上的开发速度和缺陷下降宣传数字作为本指南收益承诺。",
+      "published_at": null,
+      "source_type": "technical_documentation",
+      "accessed_at": "2026-09-13T12:42:47.497847+00:00",
+      "resolved_url": "https://fastapi.tiangolo.com/",
+      "verification": "page_body_read",
+      "http_status": 200,
+      "extracted_text_characters": 14432,
+      "extracted_text_sha256": "7b1f8f9c93a5e7a6741d2deddc7993e88bc361134624e3d5515167fcf6e75e95"
+    }
+  ]
+}

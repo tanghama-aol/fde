@@ -1,0 +1,98 @@
+schema_version: "1.0"
+kind: guide_data_contract
+status: example_not_enforced
+format_notice: "本指南自定义说明格式；须由项目代码或平台配置实现，不可直接导入产品执行。"
+project_id: order_exception_demo
+business_goal: "为获准区域的缺货订单生成并创建经批准的加急采购草稿。"
+owners:
+  business: TO_FILL
+  data: TO_FILL
+  integration: TO_FILL
+  access_policy: TO_FILL
+
+scope:
+  tenant: TENANT-DEMO
+  region: EAST
+  initial_case: "单订单行、单产品、数量以件计"
+  production_data_authorization: required_before_use
+
+identity:
+  order_key: [tenant_id, order_id]
+  order_line_key: [tenant_id, order_id, line_id]
+  inventory_key: [tenant_id, warehouse_id, sku]
+  supplier_key: [tenant_id, supplier_id]
+  tenant_origin: "来自可信接入配置与认证上下文，不能由模型授予。"
+
+sources:
+  erp_orders:
+    authoritative_for: [order_status, ordered_qty, delivered_qty, order_version]
+    transport: TO_FILL
+    change_tracking: TO_FILL
+    deletion_semantics: "保留取消状态与审计，删除传播按已批准保留策略实现。"
+    required_fields:
+      order_id: string
+      line_id: string
+      sku: string
+      ordered_qty: integer
+      delivered_qty: integer
+      status: string
+      version: integer
+      source_updated_at: timestamp_utc
+      ingested_at: timestamp_utc
+  wms_inventory:
+    authoritative_for: [available_qty, inventory_version]
+    definition_available_qty: "WMS 报告的可用量，已扣减其已生效预留；本流程不会再次扣减。"
+    transport: TO_FILL
+    deletion_semantics: "缺记录表示未知，不自动当作零库存。"
+    max_age_seconds_for_action: 300
+    freshness_basis: "以源系统确认库存快照的 source_observed_at 计算年龄；source_updated_at 表示内容最后变更时间，两者不能混用。"
+    required_fields:
+      warehouse_id: string
+      sku: string
+      available_qty: integer
+      version: integer
+      source_updated_at: timestamp_utc
+      source_observed_at: timestamp_utc
+      ingested_at: timestamp_utc
+  supplier_terms:
+    authoritative_for: [approved_supplier, unit_price_minor, expedite_fee_minor, currency]
+    required_fields:
+      supplier_id: string
+      sku: string
+      version: integer
+      approved: boolean
+      unit_price_minor: integer
+      expedite_fee_minor: integer
+      currency: string
+      valid_until: timestamp_utc
+  policy_documents:
+    required_metadata: [document_id, version, effective_from, effective_until, access_policy_id, source_locator]
+    updates: "替换版本、撤权与删除要同步到检索、缓存和引用校验。"
+
+normalization:
+  timezone: UTC
+  quantity_unit: each
+  currency: CNY
+  money_storage: "整数分；1 元 = 100 分；禁止隐式币种换算。"
+  missing_values: "保留未知状态，不用 0、空字符串或模型推测掩盖。"
+
+quality_checks:
+  - "主键组合唯一且非空。"
+  - "订单行能关联获准范围内的订单、产品和库存记录。"
+  - "ordered_qty、delivered_qty、available_qty 均非负。"
+  - "本简化场景 delivered_qty 不得大于 ordered_qty。"
+  - "来源版本不倒退；重复事件不重复应用。"
+  - "关键字段变化或删除后，执行路径不继续使用旧快照。"
+
+access_and_retention:
+  read_scope: "以可信用户身份及租户、区域策略执行。"
+  model_context: minimum_authorized_fields
+  downstream_outputs: "应用、日志、导出与共享摘要单独检查接收方和数据分类。"
+  pii: "本教学数据不含真实个人信息；真实项目按数据分类定义。"
+  retention_days: null
+  retention_owner: TO_FILL
+
+change_management:
+  compatible_change: "新增可选字段，同时更新契约和验证。"
+  breaking_change: "主键、单位、含义、权限或必填字段变化须迁移并回归评估。"
+  reconciliation: "按业务键抽样及汇总对账，频率与责任人待填写。"

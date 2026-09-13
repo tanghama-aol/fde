@@ -1,0 +1,95 @@
+schema_version: "1.0"
+kind: guide_action_contract
+status: example_not_enforced
+format_notice: "项目自定义契约；以下规则须在可信服务端及业务系统中实际实现。"
+action:
+  name: createExpediteDraft
+  version: "1.0"
+  meaning: "在 ERP 中创建一份经批准的加急采购草稿。"
+  completion: "取得并核对 ERP 的草稿标识、客户端请求标识和草稿状态。"
+  excluded_effects: [正式采购下单, 付款, 库存预留, 修改客户承诺交期]
+
+command:
+  caller_fields: [proposal_id, approval_id, idempotency_key]
+  trusted_context_fields: [subject_id, tenant_id, roles, region_scope, trace_id]
+  context_origin: "从身份系统和服务端会话取得；不信任模型传入的角色或批准文字。"
+  persisted_proposal_fields:
+    - order_id
+    - line_id
+    - sku
+    - warehouse_id
+    - supplier_id
+    - quantity
+    - expected_order_version
+    - expected_inventory_version
+    - expected_supplier_terms_version
+    - expected_policy_version
+    - unit_price_minor
+    - expedite_fee_minor
+    - total_minor
+    - currency
+    - evidence_refs
+    - payload_hash
+  server_derived_fields: [unit_price_minor, expedite_fee_minor, total_minor, currency, payload_hash]
+  snapshot_rule: "上述派生字段在生成提案时由服务端计算并持久化；批准与幂等绑定该不可变快照，执行时不覆盖原报价。"
+
+authorization:
+  required_role: procurement_planner
+  object_scope: "租户及区域必须同时匹配；提案、批准和回执也要检查访问权限。"
+  decision_record: "保存策略版本及结果；执行前重新判断当前权限。"
+
+preconditions:
+  allowed_order_status: [OPEN, AT_RISK]
+  inventory_max_age_seconds: 300
+  supplier_must_be_approved: true
+  quantity: "正整数，且不超过按当前权威数据重新计算的缺口。"
+  draft_total_limit_minor: 500000
+  currency: CNY
+  versions: "首次执行前检查订单、库存、供应商条款及关键政策版本；改变后需刷新提案并重新批准。"
+  pricing: "检查条款有效期并重算金额；数量、单价、费用或币种变化时重新批准，不能只因新总额低于上限就沿用旧批准。"
+  concurrency_limit: "跨 ERP 和 WMS 不假设全局事务；真实库存预留须另用 WMS 原子接口。"
+  external_conditional_write: "如 ERP 不支持条件写入，需评估竞态风险并制定受限辅助流程。"
+
+approval:
+  source: trusted_approval_store
+  binds: [proposal_id, payload_hash, evidence_versions, approver_id, approved_at, expires_at]
+  max_lifetime_seconds: 900
+  conditions: "批准人有权批准该动作；参数变化、关键状态变化或到期后不能沿用旧批准。"
+  separation_of_duties: "按客户制度实现；教学示例不规定所有组织都必须双人批准。"
+
+idempotency:
+  durable_unique_key: [tenant_id, action_name, idempotency_key]
+  payload_origin: "使用动作名、动作版本及不可变提案内容计算载荷哈希；不随执行时的源数据变化重算请求身份。"
+  proposal_uniqueness: "同一租户、动作和提案只建立一条业务执行记录；更换幂等键也指向已有记录，不产生第二份草稿。"
+  same_key_same_payload: "返回已确认回执或当前处理状态，不产生新的业务副作用。"
+  same_key_different_payload: IDEMPOTENCY_CONFLICT
+  execution_claim: "持久记录原子抢占；失败恢复不得让多个工作进程并发创建。"
+  downstream_request_id: "稳定派生并传给 ERP；需验证 ERP 的去重或查询语义。"
+  retention: "至少覆盖业务重试、延迟回执和对账周期，具体天数待项目确定。"
+
+outcomes:
+  executed: "确认草稿已创建；不表示正式采购或交付改善已发生。"
+  blocked: "前置规则未满足，没有开始外部写入。"
+  failed: "已确认本次外部写入未成功，保留错误分类。"
+  outcome_unknown: "无法确定外部效果；先按请求标识查回执或对账。"
+  retry_rule: "仅在确认未执行且仍满足前提时恢复；不对未知结果盲目重试。"
+
+errors:
+  - FORBIDDEN
+  - APPROVAL_REQUIRED
+  - APPROVAL_EXPIRED
+  - DATA_STALE
+  - MISSING_DATA
+  - INVALID_STATE
+  - STALE_PRECONDITION
+  - IDEMPOTENCY_CONFLICT
+  - OUTCOME_UNKNOWN
+
+audit:
+  required_fields: [trace_id, request_id, subject_id, tenant_id, action_version, proposal_id, approval_id, payload_hash, data_versions, policy_version, result_state, external_receipt_id]
+  sensitive_payload: "不默认记录全部原文或凭据；按数据分类保存必要证据引用。"
+
+recovery:
+  pause: "可关闭此动作的写入；保留已获准的查询和人工处理入口。"
+  reconciliation: "用稳定客户端请求标识和外部草稿清单确认是否已创建。"
+  compensation: "需要取消草稿时执行另一项经授权、可审计的动作，不伪称软件回退会撤销业务。"

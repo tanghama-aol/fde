@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Order exception recommendation — teaching schema",
+  "description": "教学用建议输出结构；不执行批准、授权、业务计算或外部写入。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "case_id", "order_id", "decision", "summary", "data_versions", "evidence_refs", "candidate_actions", "requires_human_approval", "missing_information"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "case_id": {"type": "string", "minLength": 1},
+    "order_id": {"type": "string", "minLength": 1},
+    "decision": {"enum": ["propose", "needs_information", "decline"]},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "data_versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["order", "inventory", "supplier_terms", "policy"],
+      "properties": {
+        "order": {"type": ["integer", "null"], "minimum": 0},
+        "inventory": {"type": ["integer", "null"], "minimum": 0},
+        "supplier_terms": {"type": ["integer", "null"], "minimum": 0},
+        "policy": {"type": ["string", "null"]}
+      }
+    },
+    "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "candidate_actions": {
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "line_id", "supplier_id", "quantity", "estimated_total_minor", "currency"],
+        "properties": {
+          "name": {"const": "createExpediteDraft"},
+          "line_id": {"type": "string", "minLength": 1},
+          "supplier_id": {"type": "string", "minLength": 1},
+          "quantity": {"type": "integer", "minimum": 1},
+          "estimated_total_minor": {"type": "integer", "minimum": 0},
+          "currency": {"const": "CNY"}
+        }
+      }
+    },
+    "requires_human_approval": {"type": "boolean"},
+    "missing_information": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"decision": {"const": "propose"}}, "required": ["decision"]},
+      "then": {
+        "properties": {
+          "candidate_actions": {"minItems": 1},
+          "requires_human_approval": {"const": true},
+          "evidence_refs": {"minItems": 1},
+          "missing_information": {"maxItems": 0},
+          "data_versions": {"properties": {"order": {"type": "integer"}, "inventory": {"type": "integer"}, "supplier_terms": {"type": "integer"}, "policy": {"type": "string", "minLength": 1}}}
+        }
+      },
+      "else": {"properties": {"candidate_actions": {"maxItems": 0}, "requires_human_approval": {"const": false}}}
+    },
+    {
+      "if": {"properties": {"decision": {"const": "needs_information"}}, "required": ["decision"]},
+      "then": {"properties": {"missing_information": {"minItems": 1}}}
+    }
+  ]
+}
